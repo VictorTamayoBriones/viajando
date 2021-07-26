@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Helmet} from 'react-helmet';
+import Navbar from './elements/Navbar.component';
+import Slider from './components/Slider.component';
+import ContainerMedium from './elements/ContainerMedium';
+import OfertasSection from './elements/OfertasSection';
+import Categorias from './elements/Categorias';
+import Footer from './elements/Footer';
+import DestinosFrecuentes from './elements/DestinosFrecuentes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Helmet>
+        <title>Viajando Ando</title>
+      </Helmet>
+
+      <Navbar/>
+      
+      <ContainerMedium>
+        <Slider/>
+        <OfertasSection title={true} />
+        <Categorias/>
+        <DestinosFrecuentes/>
+      </ContainerMedium>
+
+      <Footer/>
+    </>
   );
 }
 
