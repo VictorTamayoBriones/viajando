@@ -13,6 +13,7 @@ import Contacto from './components/Contacto.component';
 import Home from './components/Home.component';
 import {ProviderCategoria} from './Context/categoriaContext';
 import {ProviderFile} from './Context/fileContext';
+import Error404 from './components/404';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -30,6 +31,7 @@ ReactDOM.render(
             <Route path="/contacto" component={Contacto} />
             <Route path="/login" component={Login} />
             <Route path="/home" component={Home} />
+            <Route component={Error404} />
           </Switch>
         </BrowserRouter>
       </ProviderFile>

@@ -9,6 +9,7 @@ const useStorage = () => {
     const [url, setUrl]=useState(null);
     const [error, setError]=useState(null);
 
+    /*
     useEffect(()=>{
 
         const storageRef = projectStorage.ref(file);
@@ -28,7 +29,7 @@ const useStorage = () => {
         }
 
     }, [file])
-
+    */
     return { progress, url, error }
 }
  

@@ -5,9 +5,10 @@ import Button from '../elements/Button';
 const Form = styled.form`
     width: 80%;
     margin: auto;
+    background: ${theme.grisOscuro};
     padding: 8px;
     border-radius: 8px;
-    box-shadow: 0px 5px 9px ${theme.sombra};
+    box-shadow: 0px 5px 20px ${theme.sombra};
     ${Button}{
         margin: 12px 0px 0px 0px;
         border-radius: 5px;
