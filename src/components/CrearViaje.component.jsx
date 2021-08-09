@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import {Form, BtnContainer} from '../elements/Form';
 import {InputsContainer, Input, Message} from '../elements/Inputs';
 import Button from '../elements/Button';
@@ -6,18 +6,27 @@ import Select from '../elements/Select';
 import File from '../elements/File';
 import DatePicker from '../elements/DatePicker';
 import {ContextCategoria} from '../Context/categoriaContext';
-import {ContextFile} from '../Context/fileContext';
-import addTravel from '../firebase/addTravel';
 import getUnixTime from 'date-fns/getUnixTime';
-import ProgressBar from '../elements/ProgressBar';
+import { ContextFile } from '../Context/fileContext';
+import ProgressBar from '../elements/progressBar';
+import useStorage from '../hooks/useStorage';
 
 const CrearViaje = () => {
 
     const [place, setPlace]=useState('');
     const {categoria, selectedCategoria}=useContext(ContextCategoria);
-    const {file, setFile}=useContext(ContextFile);
+    const {file, setFile, ready, setReady}=useContext(ContextFile);
     const [date, changedate]=useState(new Date());
     const [description, setDescription]=useState('');
+    
+    useEffect(()=>{
+        if(ready === false){
+            setPlace('');
+            selectedCategoria(null);
+            changedate(new Date());
+            setDescription('');
+        }
+    }, [ready, selectedCategoria]);
 
     const handleChange = (e)=>{
         if(e.target.name === 'place'){
@@ -29,28 +38,7 @@ const CrearViaje = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        
-        if(place !== '' && description !== ''){
-
-            addTravel({
-                place: place,
-                categoria: categoria,
-                url: file.name,
-                date: getUnixTime(date),
-                description: description
-            }).then(()=>{
-                alert('Viaje Creado');
-                setPlace('');
-                selectedCategoria(null);
-                setFile(null);
-                changedate(new Date());
-                setDescription('');
-            }).catch((err)=>{
-                alert(err);
-            })
-    
-        }
-
+        setReady(true);
     }
 
     return (
@@ -63,7 +51,7 @@ const CrearViaje = () => {
                     <File/>
                     <DatePicker date={date} changeDate={changedate} />
                 </BtnContainer>
-                {file && <ProgressBar/>}
+                { file && <ProgressBar file={file} setFile={setFile} place={place} categoria={categoria} date={getUnixTime(date)} description={description} ready={ready} setReady={setReady} action={useStorage} />}
                 <Message placeholder="Descripción..." name="description" value={description} onChange={handleChange} />
             </InputsContainer>
             <Button as="button" large >Crear Viaje</Button>

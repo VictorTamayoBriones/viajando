@@ -1,26 +1,31 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'
 
 const ContextFile = React.createContext();
 
-const ProviderFile = ({children}) => {
+const ProviderFile = ({children})=>{
 
-    const [file, setFile]=useState(null);
     const types = ['image/png', 'image/jpeg'];
-    const changeHandler = (e)=>{
-        let selected = e.target.files[0];
+    const [file, setFile]=useState(null);
+    const [ready, setReady]=useState(false);
 
-        if(selected && types.includes(selected.type)){
+    const handleChange = (e)=>{
+        let selected = e.target.files[0];
+        console.log(selected);
+        if( selected && types.includes(selected.type)){
             setFile(selected);
         }else{
+            alert('Usa un archivo PNG o JPEG');
             setFile(null);
         }
+
     }
 
-    return (
-        <ContextFile.Provider value={{file:file, setFile:setFile, changeHandler: changeHandler}}>
+    return(
+        <ContextFile.Provider value={{ file: file, setFile: setFile, handleChange: handleChange, ready: ready, setReady: setReady }} >
             {children}
         </ContextFile.Provider>
-    );
+    )
+
 }
- 
-export {ProviderFile, ContextFile};
+
+export { ContextFile, ProviderFile };

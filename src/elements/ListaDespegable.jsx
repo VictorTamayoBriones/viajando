@@ -10,10 +10,16 @@ const ListContainer = styled.div`
 
 const TitleList = styled.h3`
     color: ${theme.naranja};
+    display: flex;
     &:hover{
         cursor: pointer;
         color: ${theme.crema};
     }
+    svg{
+        align-self: center;
+        margin-left: 5px;
+    }
+
 `;
 
 const List = styled.ul`

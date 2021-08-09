@@ -32,6 +32,7 @@ const Message = styled.textarea`
     border-radius: 8px;
     padding: 8px;
     letter-spacing: 1.3px;
+    color: ${theme.blanco} ;
     &:focus{
         outline: none;
         border: solid 1px ${theme.naranja};

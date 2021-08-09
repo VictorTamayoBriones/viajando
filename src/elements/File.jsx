@@ -4,12 +4,13 @@ import theme from '../theme';
 import { ContextFile } from '../Context/fileContext';
 
 const File = () => {
-    const {changeHandler}=useContext(ContextFile);
+
+    const { handleChange } = useContext(ContextFile);
 
     return (
         <>
             <Label htmlFor="file" >Sube una foto</Label>
-            <FileInput type="file" id="file" onChange={changeHandler} />
+            <FileInput type="file" id="file" onChange={handleChange} />
         </>
     );
 }

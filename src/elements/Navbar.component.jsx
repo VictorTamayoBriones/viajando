@@ -2,10 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
 import {Link, useHistory} from 'react-router-dom';
+import { projectAuth } from '../firebase/firebaseConfig';
 
 const Navbar = (props) => {
 
     const history = useHistory();
+
+    const handleClick = async ()=>{
+        try{
+            await projectAuth.signOut();
+            history.push('/login');
+        }catch(error){
+            console.log(error);
+        }
+    }
 
     return (
         <Navigation>
@@ -16,7 +26,7 @@ const Navbar = (props) => {
                     props.admin ?
                     <>
                         <li><Link to="/" >Ver blog</Link></li>
-                        <li><Link to="/" >Cerrar sesion</Link></li>
+                        <li><Link as="button" onClick={handleClick} >Cerrar sesión</Link></li>
                     </>
                     :
                     <>
