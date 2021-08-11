@@ -25,8 +25,9 @@ const CrearViaje = () => {
             selectedCategoria(null);
             changeDate(new Date());
             setDescription('');
+            setFile(null);
         }
-    }, [ready, selectedCategoria]);
+    }, [ready, selectedCategoria, setFile]);
 
     const handleChange = (e)=>{
         if(e.target.name === 'place'){

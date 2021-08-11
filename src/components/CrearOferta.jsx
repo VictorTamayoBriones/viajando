@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import {Form, BtnContainer} from '../elements/Form';
 import {InputsContainer, Input, Message} from '../elements/Inputs';
 import File from '../elements/File';
@@ -13,6 +13,14 @@ const CrearOferta = () => {
     const [description, setDescription]=useState('');
 
     const {file, setFile, ready, setReady}=useContext(ContextFile);
+
+    useEffect(()=>{
+        if( ready === false ){
+            setOferta('');
+            setDescription('');
+            setFile(null);
+        }
+    },[ready, setFile]);
 
     const handleChange = (e)=>{
 
