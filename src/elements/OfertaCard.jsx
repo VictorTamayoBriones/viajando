@@ -3,6 +3,7 @@ import theme from '../theme';
 
 const Ofertacard = styled.div`
     width: 300px;
+    height: max-content;
     margin: 12px 0px;
     border-radius: 12px;
     background: #353535;
@@ -16,6 +17,7 @@ const Ofertacard = styled.div`
         }
     }
     .info{
+        height: 120px;
         padding: 8px;
         color: ${theme.blanco};
         p{

@@ -14,6 +14,7 @@ import AddGaleria from './AddGaleria';
 import Error404 from './404';
 
 import ViajesTemp from './viajesTemp';
+import OfertasTemp from './OfertasTemp';
 
 const Home = () => {
 
@@ -35,7 +36,7 @@ const Home = () => {
                 break;
             case 'viewOfertas':
                     changeViewComponent(null);
-                    changeViewComponent(<ViewOfertas/>);
+                    changeViewComponent(<OfertasTemp/>);
                 break;
             case 'makeOfertas':
                     changeViewComponent(null);
