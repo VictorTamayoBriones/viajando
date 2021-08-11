@@ -16,7 +16,7 @@ const AddGaleria = () => {
             <br />
             <BtnContainer>
                 <File/>
-            </BtnContainer>
+            </BtnContainer><br />
             { file && <ProgressBar file={file} setFile={setFile} ready={ready} setReady={setReady} action={useAddGaleria} />}
         </Form>
     );

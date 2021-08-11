@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { projectStorage, projectFirestore } from '../firebase/firebaseConfig';
 import { ContextFile } from '../Context/fileContext';
 
-const useStorage = (file, place, categoria, date, description, galery) => {
+const useStorage = (file, place, categoria, date, description) => {
 
     const [progress, setProgress] = useState(0);
     const [error, setError] = useState(null);
@@ -37,26 +37,6 @@ const useStorage = (file, place, categoria, date, description, galery) => {
             alert('Oferta Creada');
             setReady(false);
 
-          }
-
-        });
-
-      }
-
-      if(galery){
-
-        storageRef.put(file).on('state_changed', (snap) => {
-          let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-          setProgress(percentage);
-        }, (err) => {
-          setError(err);
-        }, async () => {
-          const url = await storageRef.getDownloadURL();
-          
-          if( url ){
-            await projectFirestore.collection('galeria').add({ url });
-            setUrl(url);
-            alert('Se agrego una foto');
           }
 
         });
