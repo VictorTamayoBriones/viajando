@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import theme from '../theme';
 
 const CardTravel = styled.div`
-    width: 1000px;
+    width: 100%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -16,16 +16,22 @@ const ImageContainer = styled.div`
     border-radius: 8px;
     img{
         width: 100%;
+        height: 100%;
+        transform: translateY(-20px);
+        position: relative;
+        z-index: 1;
     }
 `;
 
 const ImageTitle = styled.div`
-    width: 500px;
+    width: 100%;
+    height: 20px;
     text-align: center;
     background: rgba(0, 0, 0, 0.6);
     color: ${theme.naranja};
-    position: absolute;
-    transform: translateY(350%);
+    position: relative;
+    z-index: 2;
+    transform: translateY(120px);
     h2{
         margin: 8px 0px;
     }

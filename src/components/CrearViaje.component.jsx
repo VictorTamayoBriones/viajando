@@ -1,29 +1,29 @@
-import React, {useState, useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {Form, BtnContainer} from '../elements/Form';
 import {InputsContainer, Input, Message} from '../elements/Inputs';
 import Button from '../elements/Button';
 import Select from '../elements/Select';
 import File from '../elements/File';
 import DatePicker from '../elements/DatePicker';
-import {ContextCategoria} from '../Context/categoriaContext';
 import getUnixTime from 'date-fns/getUnixTime';
-import { ContextFile } from '../Context/fileContext';
 import ProgressBar from '../elements/progressBar';
 import useStorage from '../hooks/useStorage';
+import { ContextFile } from '../Context/fileContext';
+import {ContextCategoria} from '../Context/categoriaContext';
 
 const CrearViaje = () => {
 
     const [place, setPlace]=useState('');
     const {categoria, selectedCategoria}=useContext(ContextCategoria);
     const {file, setFile, ready, setReady}=useContext(ContextFile);
-    const [date, changedate]=useState(new Date());
+    const [date, changeDate]=useState(new Date());
     const [description, setDescription]=useState('');
-    
+
     useEffect(()=>{
         if(ready === false){
             setPlace('');
             selectedCategoria(null);
-            changedate(new Date());
+            changeDate(new Date());
             setDescription('');
         }
     }, [ready, selectedCategoria]);
@@ -49,7 +49,7 @@ const CrearViaje = () => {
                 <BtnContainer>
                     <Select/>
                     <File/>
-                    <DatePicker date={date} changeDate={changedate} />
+                    <DatePicker date={date} changeDate={changeDate} />
                 </BtnContainer>
                 { file && <ProgressBar file={file} setFile={setFile} place={place} categoria={categoria} date={getUnixTime(date)} description={description} ready={ready} setReady={setReady} action={useStorage} />}
                 <Message placeholder="Descripción..." name="description" value={description} onChange={handleChange} />

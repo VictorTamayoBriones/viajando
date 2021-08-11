@@ -13,6 +13,8 @@ import GaleriaElement from '../elements/GaleriaElement';
 import AddGaleria from './AddGaleria';
 import Error404 from './404';
 
+import ViajesTemp from './viajesTemp';
+
 const Home = () => {
 
     const [visibleViajes, changeVisibleViajes]=useState(false);
@@ -26,7 +28,7 @@ const Home = () => {
         switch (componentSelected) {
             case 'viewTravel':
                     changeViewComponent(null);
-                    changeViewComponent(<ViewViajes/>);
+                    changeViewComponent(<ViajesTemp/>);
                 break;
             case 'makeTravel':
                     changeViewComponent(<CrearViaje/>);

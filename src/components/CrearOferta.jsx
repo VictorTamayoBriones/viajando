@@ -5,7 +5,7 @@ import File from '../elements/File';
 import Button from '../elements/Button';
 import { ContextFile } from '../Context/fileContext';
 import ProgressBar from '../elements/progressBar';
-import useCrearOferta from '../hooks/useCreateOferta';
+import useStorage from '../hooks/useStorage';
 
 const CrearOferta = () => {
 
@@ -15,11 +15,13 @@ const CrearOferta = () => {
     const {file, setFile, ready, setReady}=useContext(ContextFile);
 
     const handleChange = (e)=>{
+
         if( e.target.name === 'oferta' ){
             setOferta(e.target.value);
         }else if( e.target.name === 'description' ){
             setDescription(e.target.value);
         }
+        
     }
 
     const handleSubmit = (e)=>{
@@ -34,7 +36,7 @@ const CrearOferta = () => {
                 <BtnContainer>
                     <File/>
                 </BtnContainer>
-                { file && <ProgressBar file={file} setFile={setFile} place={oferta} description={description} ready={ready} setReady={setReady} action={useCrearOferta} galery={true} />}
+                { file && <ProgressBar file={file} setFile={setFile} place={oferta} description={description} ready={ready} setReady={setReady} action={useStorage} galery={true} />}
                 <Message placeholder="Descripción de la oferta..." name="description" value={description} onChange={handleChange} />
             </InputsContainer>
             <Button as="button" large >Crear Oferta</Button>
