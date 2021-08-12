@@ -5,6 +5,7 @@ const Daschboard = styled.div`
     height: 100vh;
     overflow: scroll;
     padding: 30px 0px;
+    position: relative;
 `;
 
 export {Daschboard};

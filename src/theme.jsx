@@ -7,7 +7,7 @@ const theme = {
     blanco:'#e7e7e7',
     negro:'#111111' ,
     azul: '#049185',
-    rojo: '#8d0101',
+    rojo: '#af0303',
     sombra: 'rgba(0,0,0,0.5)'
 }
 

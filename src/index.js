@@ -17,6 +17,7 @@ import Error404 from './components/404';
 import RutaPrivada from './components/RutaPrivada';
 import { ProviderAuth } from './Context/authContext';
 import { ProviderForms } from './Context/formContext';
+import { ProviderModal } from './Context/ModalContext';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,23 +26,25 @@ ReactDOM.render(
     </Helmet>
     <ProviderAuth>
       <ProviderCategoria>
-        <ProviderForms>          
-          <ProviderFile>
-            <BrowserRouter>
-              <Switch>
-                <Route path="/" exact={true} component={App} />
-                <Route path="/viajes" component={Viajes} />
-                <Route path="/ofertas" component={Ofertas} />
-                <Route path="/galeria" component={Galeria} />
-                <Route path="/contacto" component={Contacto} />
-                <Route path="/login" component={Login} />
-                <RutaPrivada path="/home" >
-                  <Home/>
-                </RutaPrivada>
-                <Route component={Error404} />
-              </Switch>
-            </BrowserRouter>
-          </ProviderFile>
+        <ProviderForms>
+          <ProviderModal>
+            <ProviderFile>
+              <BrowserRouter>
+                <Switch>
+                  <Route path="/" exact={true} component={App} />
+                  <Route path="/viajes" component={Viajes} />
+                  <Route path="/ofertas" component={Ofertas} />
+                  <Route path="/galeria" component={Galeria} />
+                  <Route path="/contacto" component={Contacto} />
+                  <Route path="/login" component={Login} />
+                  <RutaPrivada path="/home" >
+                    <Home/>
+                  </RutaPrivada>
+                  <Route component={Error404} />
+                </Switch>
+              </BrowserRouter>
+            </ProviderFile>
+          </ProviderModal>        
         </ProviderForms>
       </ProviderCategoria>
     </ProviderAuth>

@@ -8,6 +8,21 @@ const Ofertacard = styled.div`
     border-radius: 12px;
     background: #353535;
     overflow: hidden;
+    svg{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+        color: ${theme.blanco};
+        margin: 5px;
+        padding: 2px;
+        border-radius: 20px;
+        background: #000;
+        &:hover{
+            cursor: pointer;
+            background: red;
+        }
+    }
     .image{
         width: 100%;
         height: 200px;

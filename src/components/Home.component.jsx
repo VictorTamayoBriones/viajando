@@ -5,11 +5,8 @@ import Container from '../elements/Container';
 import Aside from '../elements/Aside';
 import {ListContainer, TitleList, List, ListElement} from '../elements/ListaDespegable';
 import {Daschboard} from '../elements/DaschBoard';
-import ViewViajes from '../elements/Viajes';
 import CrearViaje from './CrearViaje.component';
-import ViewOfertas from '../elements/OfertasSection';
 import CrearOferta from './CrearOferta';
-import GaleriaElement from '../elements/GaleriaElement';
 import AddGaleria from './AddGaleria';
 import Error404 from './404';
 

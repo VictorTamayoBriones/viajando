@@ -7,6 +7,22 @@ const CardTravel = styled.div`
     display: flex;
     justify-content: space-between;
     overflow: hidden;
+    position: relative;
+    svg{
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        z-index: 2;
+        color: ${theme.blanco};
+        margin: 5px;
+        padding: 2px;
+        border-radius: 20px;
+        background: #000;
+        &:hover{
+            cursor: pointer;
+            background: red;
+        }
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -14,6 +30,7 @@ const ImageContainer = styled.div`
     height: 300px;
     overflow: hidden;
     border-radius: 8px;
+    box-shadow: 4px 0px 12px ${theme.sombra};
     img{
         width: 100%;
         height: 100%;
