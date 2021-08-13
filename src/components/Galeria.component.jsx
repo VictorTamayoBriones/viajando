@@ -3,7 +3,7 @@ import Navbar from '../elements/Navbar.component';
 import ContainerMedium from '../elements/ContainerMedium';
 import TitleSection from '../elements/titleSection';
 import Helmet from 'react-helmet';
-import GaleriaElement from '../elements/GaleriaElement';
+import GaleryTemp from './GaleryTemp';
 
 const Galeria = () => {
     return (
@@ -14,7 +14,7 @@ const Galeria = () => {
             <Navbar/>
             <ContainerMedium>
                 <TitleSection center='center' >Galeria</TitleSection>
-                <GaleriaElement/>
+                <GaleryTemp/>
             </ContainerMedium>
         </>
     );

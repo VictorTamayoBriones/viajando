@@ -5,12 +5,13 @@ import styled from 'styled-components';
 import theme from '../theme';
 import Modal from '../elements/Modal';
 import { ContextModal } from '../Context/ModalContext';
+import { useAuth } from '../Context/authContext';
 
 const ViajesTemp = () => {
 
     const [viajes]=useObtnerViajes();
     const { modalState, setModal, setDocument, setColl } = useContext(ContextModal);
-
+    const {user} =useAuth();
     const handleDelete = (id)=>{
         setModal(true);
         setDocument(id);
@@ -25,9 +26,12 @@ const ViajesTemp = () => {
                     viajes.map((viaje)=>{
                         return(
                             <CardTravel key={viaje.id} >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" onClick={()=>handleDelete(viaje.id)} >
-                                        <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
-                                    </svg> 
+                                    {
+                                        user ?
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16" onClick={()=>handleDelete(viaje.id)} >
+                                            <path d="M1.293 1.293a1 1 0 0 1 1.414 0L8 6.586l5.293-5.293a1 1 0 1 1 1.414 1.414L9.414 8l5.293 5.293a1 1 0 0 1-1.414 1.414L8 9.414l-5.293 5.293a1 1 0 0 1-1.414-1.414L6.586 8 1.293 2.707a1 1 0 0 1 0-1.414z"/>
+                                        </svg> :''
+                                    }
                                     <ImageContainer>
                                         <ImageTitle>{viaje.place}</ImageTitle>
                                         <img src={viaje.url} alt={viaje.place} />

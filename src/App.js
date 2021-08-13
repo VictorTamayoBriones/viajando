@@ -7,6 +7,7 @@ import OfertasSection from './elements/OfertasSection';
 import Categorias from './elements/Categorias';
 import Footer from './elements/Footer';
 import DestinosFrecuentes from './elements/DestinosFrecuentes';
+import OfertasTemp from './components/OfertasTemp';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       
       <ContainerMedium>
         <Slider/>
-        <OfertasSection title={true} />
+        <OfertasTemp home={true} />
         <Categorias/>
         <DestinosFrecuentes/>
       </ContainerMedium>
