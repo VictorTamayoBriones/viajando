@@ -2,10 +2,18 @@ import React, {useContext} from 'react'
 import styled from 'styled-components';
 import theme from '../theme';
 import { ContextModal } from '../Context/ModalContext';
+import deleteDoc from '../firebase/deleteDocument';
 
 const Modal = ({ titulo, modalForImage }) => {
 
-    const {modalState, setModal, setModalImage, image}=useContext(ContextModal);
+    const {setModal, setModalImage, image, document, coll, setDocument, setColl}=useContext(ContextModal);
+
+    const handleDelete = ()=>{
+        deleteDoc(document, coll);
+        setModal(false);
+        setDocument(null);
+        setColl(null);
+    }
 
     return (
         <ContainerModal>
@@ -27,7 +35,7 @@ const Modal = ({ titulo, modalForImage }) => {
                             </>                            
                         :
                         <ContainerBtn>
-                            <Btn action='delete' >Eliminar</Btn>
+                            <Btn action='delete' onClick={handleDelete} >Eliminar</Btn>
                             <Btn action='cancel' onClick={()=>setModal(false)} >Cancelar</Btn>
                         </ContainerBtn>
                     }
