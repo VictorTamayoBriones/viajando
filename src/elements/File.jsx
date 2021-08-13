@@ -16,7 +16,8 @@ const File = () => {
 }
 
 const FileInput = styled.input`
-    position: absolute;
+    position: relative;
+    display: none;
     z-index: -1;
     top: 10px;
     left: 8px;

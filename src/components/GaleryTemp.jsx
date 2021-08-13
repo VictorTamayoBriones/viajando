@@ -41,7 +41,8 @@ const ContainerGalery = styled.div`
     width: 95%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 12px;
     flex-wrap: wrap;
     position: relative;
     svg{

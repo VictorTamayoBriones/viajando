@@ -46,17 +46,18 @@ const ContainerModal = styled.div`
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
 `;
 
 const ModalComponent = styled.div`
     width: ${(props)=>{
         if(props.modalForImage === true){
-            return '80%'
+            return '70%'
         }else{
             return '60%'
         }
     }};
+    max-height: 90vh;
     margin: auto;
     border-radius: 8px;
     overflow: hidden;
