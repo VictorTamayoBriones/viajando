@@ -1,17 +1,28 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import TitleSection from '../elements/titleSection';
 import styled from 'styled-components';
 import Categoria from '../elements/Categoria';
+import { useHistory } from 'react-router';
+import { ContextCategoria } from '../Context/categoriaContext';
 
 const Categorias = () => {
+
+    const history = useHistory();
+    const {categoriaHome, setCategoriaHome}=useContext(ContextCategoria);
+
+    const handleCategoria = (categoria)=>{
+        setCategoriaHome(categoria);
+        history.push('/categoria'+categoria);
+    }
+
     return (
         <>
             <TitleSection>Categorias</TitleSection>
             <CategoriasContainer>
-                <Categoria>Ciudad</Categoria>
-                <Categoria>Playa</Categoria>
-                <Categoria>Aventura</Categoria>
-                <Categoria>Pueblos Magicos</Categoria>
+                <Categoria onClick={()=>handleCategoria('ciudad')} >Ciudad</Categoria>
+                <Categoria onClick={()=>handleCategoria('playa')} >Playa</Categoria>
+                <Categoria onClick={()=>handleCategoria('aventura')} >Aventura</Categoria>
+                <Categoria onClick={()=>handleCategoria('pueblosMagicos')} >Pueblos Magicos</Categoria>
             </CategoriasContainer>
         </>
     );

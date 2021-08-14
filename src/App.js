@@ -3,11 +3,11 @@ import {Helmet} from 'react-helmet';
 import Navbar from './elements/Navbar.component';
 import Slider from './components/Slider.component';
 import ContainerMedium from './elements/ContainerMedium';
-import OfertasSection from './elements/OfertasSection';
 import Categorias from './elements/Categorias';
 import Footer from './elements/Footer';
 import DestinosFrecuentes from './elements/DestinosFrecuentes';
 import OfertasTemp from './components/OfertasTemp';
+import TitleSection from './elements/titleSection';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
       
       <ContainerMedium>
         <Slider/>
+        <TitleSection>Ofertas</TitleSection>
         <OfertasTemp home={true} />
         <Categorias/>
         <DestinosFrecuentes/>

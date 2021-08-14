@@ -9,6 +9,7 @@ import Login from './components/Login.component';
 import Viajes from './components/Viajes.component';
 import Ofertas from './components/Ofertas.component';
 import Galeria from './components/Galeria.component';
+import ViajesPorCategoria from './components/ViajesPorCategoria';
 import Contacto from './components/Contacto.component';
 import Home from './components/Home.component';
 import {ProviderCategoria} from './Context/categoriaContext';
@@ -35,6 +36,7 @@ ReactDOM.render(
                   <Route path="/viajes" component={Viajes} />
                   <Route path="/ofertas" component={Ofertas} />
                   <Route path="/galeria" component={Galeria} />
+                  <Route path="/categoria:id" component={ViajesPorCategoria} />
                   <Route path="/contacto" component={Contacto} />
                   <Route path="/login" component={Login} />
                   <RutaPrivada path="/home" >
