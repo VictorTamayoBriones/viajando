@@ -72,6 +72,10 @@ const ModalComponent = styled.div`
     color: ${theme.blanco};
     background: ${theme.grisOscuro};
     box-shadow: 0px 0px 15px ${theme.sombra};
+    @media (max-width: 900px){
+        transform: translateY(-290px);
+        width: 100%;
+    }
 `;
 
 const ModalHeader=styled.div`

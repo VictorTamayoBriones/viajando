@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import theme from '../theme';
 
 const TitleSection = styled.h3`
+    max-height: 100px;
     text-align: ${(props) => {
         if(props.center === 'center'){
             return 'center';
@@ -25,6 +26,11 @@ const TitleSection = styled.h3`
         }
     }};
     color: ${theme.naranja};
+
+    @media (max-width: 550px){
+        text-align: center;
+    }
+
 `;
 
 export default TitleSection;

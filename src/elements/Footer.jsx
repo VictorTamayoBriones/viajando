@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import theme from '../theme';
+import { useHistory } from 'react-router';
 
 const Footer = () => {
+
+    const history = useHistory();
+
     return (
         <ContainerFooter>
-            <p>Viajando Ando © 2021</p>
+            <p onClick={()=>history.push('/login')} >Viajando Ando © 2021</p>
         </ContainerFooter>
     );
 }

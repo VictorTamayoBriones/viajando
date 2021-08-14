@@ -20,7 +20,7 @@ function App() {
       
       <ContainerMedium>
         <Slider/>
-        <TitleSection>Ofertas</TitleSection>
+        <TitleSection >Ofertas</TitleSection>
         <OfertasTemp home={true} />
         <Categorias/>
         <DestinosFrecuentes/>

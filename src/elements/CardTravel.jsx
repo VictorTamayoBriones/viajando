@@ -23,6 +23,9 @@ const CardTravel = styled.div`
             background: red;
         }
     }
+    @media (max-width: 900px){
+        flex-direction:column ;
+    }
 `;
 
 const ImageContainer = styled.div`
@@ -37,6 +40,9 @@ const ImageContainer = styled.div`
         transform: translateY(-20px);
         position: relative;
         z-index: 1;
+    }
+    @media (max-width: 900px){
+        width: 100%;
     }
 `;
 
@@ -65,6 +71,10 @@ const Details = styled.div`
         color: ${theme.blanco};
         letter-spacing: 1.3px;
         line-height: 22px;
+    }
+    @media (max-width: 900px){
+        width: 100%;
+        padding: 20px 0px 0px 0px;
     }
 `;
 

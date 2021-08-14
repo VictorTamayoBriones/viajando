@@ -17,6 +17,14 @@ const Categoria = styled.div`
         background: ${theme.verde};
         cursor: pointer;
     }
+    @media (max-width: 1175px){
+        width: 45%;
+        margin: 12px;
+    }
+
+    @media (max-width: 605px){
+        width: 100%;
+    }
 `;
 
 export default Categoria;

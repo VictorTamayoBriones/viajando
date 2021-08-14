@@ -15,6 +15,7 @@ import OfertasTemp from './OfertasTemp';
 import GaleryTemp from './GaleryTemp';
 import MailsTemp from './MailsTemp';
 
+
 const Home = () => {
 
     const [visibleViajes, changeVisibleViajes]=useState(false);
@@ -156,5 +157,5 @@ const Home = () => {
         </>
     );
 }
- 
+
 export default Home;

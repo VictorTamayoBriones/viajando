@@ -79,6 +79,13 @@ const Navigation = styled.nav`
             }
         }
     }
+
+    @media(max-width: 666px){ /* 950px */
+        flex-direction: column;
+        ul{
+            gap: 25px;
+        }
+    }
 `;
 
 export default Navbar;

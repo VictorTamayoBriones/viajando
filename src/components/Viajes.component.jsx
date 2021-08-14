@@ -28,7 +28,6 @@ const ContainerViajes = styled.div`
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 `;
  
 export default Viajes;

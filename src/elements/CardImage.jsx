@@ -27,6 +27,12 @@ const CardImage = styled.div`
         text-align: center;
         font-size: 20px;
     }
+
+    @media (max-width: 500px){
+        .info{
+            width: 70%;
+        }
+    }
 `;
 
 export default CardImage;

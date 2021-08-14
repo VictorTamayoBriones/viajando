@@ -85,7 +85,7 @@ const Login = () => {
             </Helmet>
             <Container>
                 <FormLogin onSubmit={handleSubmit} >
-                    <img src={Logo} alt="Viajando Ando" title="viajando ando"/>
+                    <img src={Logo} alt="Viajando Ando" title="viajando ando" onClick={()=>history.push('/')} />
                     <InputsContainer>
                         <Input type="email" placeholder="Correo" name="email" value={email} onChange={handleChange} />
                         <Input type="password" placeholder="Contraseña" name="pass" value={pass} onChange={handleChange} />
@@ -108,6 +108,15 @@ const FormLogin = styled.form`
     img{
         width: 170px;
         margin-bottom: 12px;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    @media (max-width: 770px){
+        width: 95%;
+        flex-direction: column;
+        align-items: center;
     }
 `;
 

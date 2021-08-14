@@ -88,6 +88,26 @@ const ContainerGalery = styled.div`
             }
         }
     }
+
+
+    @media (max-width: 1100px){
+        width: 100%;
+        .image{
+            width: 48%;
+        }
+    }
+
+    @media (max-width: 500px){
+        gap: 0;
+        .image{
+            width: 50%;
+            margin-top: 0;
+            border-radius: 0;
+            img{
+                transform: scale(2);
+            }
+        }
+    }
 `;
 
 const Message = styled.div`
