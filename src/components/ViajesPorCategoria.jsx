@@ -14,7 +14,7 @@ const ViajesPorCategoria = () => {
 
     return (
         <>
-        <Title>{categoriaHome === 'pueblosMagicos' ? 'Pueblos Magicos' : categoriaHome.toUpperCase()}</Title>
+        <Title>{categoriaHome === 'pueblosMagicos' ? 'Pueblos Magicos' : categoriaHome}</Title>
         <ContainerViajes>
             {
                 viajesCategoria.length > 0 ?
@@ -43,13 +43,13 @@ const ViajesPorCategoria = () => {
  
 const ContainerViajes = styled.div`
     width: 80%;
+    padding: 12px 0px;
     position: relative;
     margin: auto;
-    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
 `;
 
 const Message = styled.div`

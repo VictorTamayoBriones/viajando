@@ -29,7 +29,7 @@ const Contacto = () => {
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        if( name != '' && tel != '' && email != '' && message != '' ){
+        if( name !== '' && tel !== '' && email !== '' && message !== '' ){
             addMail(name, tel, email, message, setName, setTel, setEmail, setMessage);
         }
     }

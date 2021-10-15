@@ -60,14 +60,14 @@ const ViajesTemp = () => {
 
 const ContainerViajes = styled.div`
     width: 95%;
+    padding: 30px 0px;
     position: relative;
     margin: auto;
-    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
+    gap: 50px;
 `;
 
 const Message = styled.div`

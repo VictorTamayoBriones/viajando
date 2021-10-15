@@ -1,10 +1,10 @@
-import React, {useState, useContext, useEffect} from 'react'
+import {useState, useContext, useEffect} from 'react'
 import { projectFirestore } from '../firebase/firebaseConfig';
 import { ContextCategoria } from '../Context/categoriaContext';
 
 const useObtenerViajesPorCategoria = () => {
     const [viajesCategoria, setViajesCategoria]=useState([]);
-    const { categoriaHome, setCategoriaHome }=useContext(ContextCategoria);
+    const { categoriaHome }=useContext(ContextCategoria);
 
     useEffect(()=>{
         const unsuscribe = projectFirestore.collection('viajes')
@@ -16,7 +16,7 @@ const useObtenerViajesPorCategoria = () => {
             }));
         });
         return unsuscribe;
-    }, []);
+    }, [categoriaHome]);
     return [viajesCategoria]
 }
  

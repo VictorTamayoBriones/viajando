@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import TitleSection from '../elements/titleSection';
 import styled from 'styled-components';
 import Categoria from '../elements/Categoria';
@@ -8,7 +8,7 @@ import { ContextCategoria } from '../Context/categoriaContext';
 const Categorias = () => {
 
     const history = useHistory();
-    const {categoriaHome, setCategoriaHome}=useContext(ContextCategoria);
+    const {setCategoriaHome}=useContext(ContextCategoria);
 
     const handleCategoria = (categoria)=>{
         setCategoriaHome(categoria);

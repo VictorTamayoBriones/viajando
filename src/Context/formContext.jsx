@@ -1,6 +1,5 @@
 import React, {useState, useContext} from 'react'
 import { ContextCategoria } from './categoriaContext';
-import { ContextFile } from './fileContext';
 
 const ContextForms = React.createContext();
 

@@ -32,7 +32,6 @@ const Ofertacard = styled.div`
         }
     }
     .info{
-        height: 120px;
         padding: 8px;
         color: ${theme.blanco};
         p{

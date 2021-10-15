@@ -24,7 +24,6 @@ const ContainerViajes = styled.div`
     width: 95%;
     position: relative;
     margin: auto;
-    height: 100vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;

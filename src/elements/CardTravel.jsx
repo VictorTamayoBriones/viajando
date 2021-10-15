@@ -5,7 +5,6 @@ const CardTravel = styled.div`
     width: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
     overflow: hidden;
     position: relative;
     svg{
@@ -40,9 +39,12 @@ const ImageContainer = styled.div`
         transform: translateY(-20px);
         position: relative;
         z-index: 1;
+        object-fit: cover;
     }
     @media (max-width: 900px){
         width: 100%;
+        height: 100%;
+        height: max-content;
     }
 `;
 
@@ -57,6 +59,11 @@ const ImageTitle = styled.div`
     transform: translateY(120px);
     h2{
         margin: 8px 0px;
+    }
+    @media (max-width: 600px){
+        transform: translateY(100px);
+        font-size: 20px;
+        height: 25px;
     }
 `;
 
